@@ -549,7 +549,8 @@ def test_ed_031_save_valid_changes_and_verify_success_message(set_up_tear_down) 
         page.screenshot(path="screenshot_TC-ED-031_failed.png")
         raise
 
-page = set_up_tear_down
+def test_ed_032_updated_info_persists_after_navigation(set_up_tear_down) -> None:
+    page = set_up_tear_down
     profile = ProfilePage(page)
     try:
 
@@ -571,6 +572,7 @@ page = set_up_tear_down
         print(f"TC-ED-032 Failed: {e}")
         page.screenshot(path="screenshot_TC-ED-032_failed.png")
         raise
+
 
 def test_ed_033_updated_info_persists_after_refresh(set_up_tear_down) -> None:
     page = set_up_tear_down
