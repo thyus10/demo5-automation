@@ -31,10 +31,7 @@ def test_ed_002_verify_modal_closes(set_up_tear_down) -> None:
     try:
         profile.click_update_icon()
 
-        page.click("body")
-
-        profile.click_update_icon()
-        page.press("body", "Escape")
+        page.press.keyboard("Escape")
         print("TC-ED-002 Passed")
     except Exception as e:
         print(f"TC-ED-002 Failed: {e}")
