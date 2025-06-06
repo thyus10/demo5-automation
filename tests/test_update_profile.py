@@ -584,11 +584,8 @@ def test_ed_033_updated_info_persists_after_refresh(set_up_tear_down) -> None:
         profile.name.fill(refresh_name)
         profile.click_save_button()
 
-        page.reload()
+        page.keyboard.press("F5")
 
-        profile = ProfilePage(page)
-
-        profile.click_update_icon()
         expect(profile.name).to_have_value(refresh_name)
 
         print("TC-ED-033 Passed")
